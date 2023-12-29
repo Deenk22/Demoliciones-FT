@@ -18,7 +18,7 @@ app.use(cors(corsOptions));
 
 const resend = new Resend("re_RcPznmfh_QKWzHXeXEG6eoT2u4fAycqvR");
 
-app.get("/jhon", async (req, res) => {
+app.get("/", async (req, res) => {
   res.send("hola cara cola");
 });
 

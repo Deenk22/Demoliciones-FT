@@ -1,7 +1,7 @@
 // Recordemos que no tenemos NODEMON!!! Hay que cerrar y volver a abrir la consola!!!
 
 const express = require("express");
-const {Resend} = require("resend");
+const { Resend } = require("resend");
 const cors = require("cors");
 const port = 3000;
 const corsOptions = {
@@ -18,8 +18,12 @@ app.use(cors(corsOptions));
 
 const resend = new Resend("re_RcPznmfh_QKWzHXeXEG6eoT2u4fAycqvR");
 
+app.get("/jhon", async (req, res) => {
+  res.send("hola cara cola");
+});
+
 app.post("/api/send", async (req, res) => {
-  const {nombre, mensaje, email, phone, titulo} = req.body;
+  const { nombre, mensaje, email, phone, titulo } = req.body;
   if (!nombre || !mensaje || !email || !phone || !titulo) {
     return res.status(400).json({
       success: false,
@@ -41,16 +45,16 @@ app.post("/api/send", async (req, res) => {
     if (!data) {
       return res
         .status(404)
-        .json({message: "No hemos podido encontrar información"});
+        .json({ message: "No hemos podido encontrar información" });
     } else {
       return res
         .status(200)
-        .json({message: "Email enviado correctamente", success: true});
+        .json({ message: "Email enviado correctamente", success: true });
     }
   } catch (error) {
     return res
       .status(500)
-      .json({message: "Error al enviar el correo", success: false});
+      .json({ message: "Error al enviar el correo", success: false });
   }
 });
 

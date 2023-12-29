@@ -45,13 +45,25 @@ export default function BasicModal({...props}) {
           flexDirection={"column"}
           alignItems={"center"}
           gap={2}
-          width={320}
+          width={336}
         >
           <CloseIcon
-            onClick={handleClose}
             fontSize="medium"
-            sx={{position: "relative", top: -24, left: 140}}
+            sx={{
+              position: "relative",
+              top: -16,
+              left: 132,
+              cursor: "pointer",
+              border: 2,
+              borderRadius: 2,
+              transition: "0.2s",
+              "&:hover": {
+                backgroundColor: "primary.main",
+                color: "white.main",
+              },
+            }}
             color="primary"
+            onClick={handleClose}
           />
           <MailForm titulo={titulo} setOpen={setOpen} />
         </Box>

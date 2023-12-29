@@ -4,6 +4,7 @@ import {infoCards} from "../constants/infoCards";
 import {Box, Grid, Typography} from "@mui/material";
 import BasicModal from "../components/Modal/BasicModal";
 import Ubi from "../components/Ubi/Ubi";
+import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
 
 export default function Servicios() {
   return (
@@ -37,7 +38,7 @@ export default function Servicios() {
         </Typography>
         <Typography
           variant="body1"
-          color={"primary"}
+          color={"paragraph"}
           width={{xs: "100%", sm: "32%"}}
           textAlign={{xs: "center", sm: "left"}}
         >
@@ -79,7 +80,7 @@ export default function Servicios() {
             <Typography variant="h1" color={"primary"} fontSize={"3rem"}>
               {servicios[0].titulo}
             </Typography>
-            <Typography variant="body1" color={"typography.main"} mt={1}>
+            <Typography variant="body1" color={"paragraph.main"} mt={1}>
               {servicios[0].descripcion}
             </Typography>
             <Typography variant="body1" color={"primary"} mt={3} mb={-3}>
@@ -109,7 +110,7 @@ export default function Servicios() {
             <Typography variant="h1" color={"primary"} fontSize={"3rem"}>
               {servicios[1].titulo}
             </Typography>
-            <Typography variant="body1" color={"typography.main"} mt={1}>
+            <Typography variant="body1" color={"paragraph.main"} mt={1}>
               {servicios[1].descripcion}
             </Typography>
             <Typography variant="body1" color={"primary"} mt={3} mb={-3}>
@@ -167,7 +168,7 @@ export default function Servicios() {
             </Typography>
             <Typography
               variant="body1"
-              color={"typography.main"}
+              color={"paragraph.main"}
               mt={1}
               maxWidth={"96%"}
             >
@@ -180,6 +181,29 @@ export default function Servicios() {
           </Box>
         </Grid>
       </Grid>
+      <Box
+        display={"flex"}
+        flexDirection={{xs: "column", md: "row"}}
+        justifyContent={"center"}
+        alignItems={"center"}
+        gap={2}
+      >
+        <Typography variant="h1" color={"primary"} borderRight={2} p={2}>
+          Contacto
+        </Typography>
+
+        <Typography
+          variant="body1"
+          color={"paragraph"}
+          width={{xs: "100%", sm: "32%"}}
+          textAlign={{xs: "center", sm: "left"}}
+          sx={{textWrap: "balance"}}
+        >
+          Francisco Ternero es una empresa especializada en derribos, retirada
+          de amianto, excavaciones y demoliciones en Málaga. Más de 50 años de
+          experiencia nos avalan. Llámenos sin compromiso!.
+        </Typography>
+      </Box>
       <Ubi />
     </section>
   );

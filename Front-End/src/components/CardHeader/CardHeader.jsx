@@ -1,7 +1,9 @@
-import styled from "@emotion/styled";
 import {Box, Paper, Typography} from "@mui/material";
+import styled from "@emotion/styled";
 
-export default function CardHeader({titulo, descripcion, img}) {
+export default function CardHeader({...props}) {
+  const {titulo, descripcion, img} = props;
+
   const Img = styled("img")({
     width: "100%",
     borderTopRightRadius: 16,
@@ -10,7 +12,7 @@ export default function CardHeader({titulo, descripcion, img}) {
 
   return (
     <Paper
-      elevation={7}
+      elevation={16}
       sx={{
         height: "100%",
         width: "100%",
@@ -21,12 +23,21 @@ export default function CardHeader({titulo, descripcion, img}) {
       }}
     >
       <Img src={img} alt={titulo} />
-      <Box bgcolor={"primary.main"} p={1} mt={-1}>
-        <Typography variant="h6" color={"white.main"} ml={2} mb={-0.5} p={1}>
+      <Box
+        bgcolor={"primary.main"}
+        mt={-1}
+        p={2}
+        sx={{
+          backgroundImage: `linear-gradient(to left, rgba(0, 65, 151, 0.1) 0%, rgba(0, 65, 151, 1) 100%), url("img/bg-section.webp")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <Typography variant="h6" color={"white.main"} mt={0.5}>
           {titulo}
         </Typography>
       </Box>
-      <Typography variant="body1" color={"typography"} width={"96%"} p={3}>
+      <Typography variant="body1" color={"paragraph"} p={3}>
         {descripcion}
       </Typography>
     </Paper>

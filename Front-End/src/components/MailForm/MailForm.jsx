@@ -3,7 +3,10 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {mailSchema} from "../../utils/mailSchema";
 import {TextField, Button, Typography, Box} from "@mui/material";
 import axios from "axios";
-import toast from "react-hot-toast";
+import {
+  errorNotifications,
+  successNotifications,
+} from "../../notifications/notifications";
 
 export default function MailForm({...props}) {
   const {titulo, setOpen} = props;
@@ -35,11 +38,16 @@ export default function MailForm({...props}) {
         requestData
       );
       reset();
+      successNotifications(data.message);
       setOpen(false);
-      toast.success(data.message);
 
       return data;
     } catch (error) {
+      if (error.response.status === 400) {
+        const message = error.response.data.message;
+        errorNotifications(message);
+      }
+
       console.log(error);
     }
   };

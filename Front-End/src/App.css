@@ -16,8 +16,8 @@ body{
   align-items: center;
   position: fixed;
   width: 100%;
-  background-color: #1b1e28b7;
-  backdrop-filter: blur(8px);
+  background-color: #004197d3;
+  backdrop-filter: blur(32px);
 }
 
 .img-logo{

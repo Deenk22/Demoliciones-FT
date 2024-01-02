@@ -39,12 +39,12 @@ export default function Footer() {
                 xl: "72%",
               }}
             >
-              Líderes en Demolición con 80 Años de Excelencia Con más de 80 años
-              de experiencia en demoliciones, Demoliciones Malagueñas S.A. se
-              destaca como líder en el sector a nivel local y nacional. Contamos
-              con una flota de maquinaria de última generación y un equipo
-              altamente calificado para abordar proyectos de cualquier tamaño o
-              complejidad con eficiencia y seguridad.
+              Líderes en Demolición con 80 Años de Excelencia. Con más de 80
+              años de experiencia en demoliciones, Demoliciones Malagueñas S.A.
+              se destaca como líder en el sector a nivel local y nacional.
+              Contamos con una flota de maquinaria de última generación y un
+              equipo altamente calificado para abordar proyectos de cualquier
+              tamaño o complejidad con eficiencia y seguridad.
             </Typography>
           </Box>
         </Grid>
@@ -68,7 +68,7 @@ export default function Footer() {
             gap={4}
           >
             {socialMedia.map((redSocial) => {
-              const {title, src, link} = redSocial;
+              const {title, src, link, description} = redSocial;
               return (
                 <Link key={title} to={link} className="link-redes-sociales">
                   <Box
@@ -77,7 +77,7 @@ export default function Footer() {
                     alignItems={"center"}
                     gap={1}
                   >
-                    <img src={src} alt={title} width={32} />
+                    <img src={src} alt={description} width={32} />
                     <Typography variant="body2" color={"white.main"}>
                       {title}
                     </Typography>

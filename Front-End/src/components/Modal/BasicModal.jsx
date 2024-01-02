@@ -52,7 +52,7 @@ export default function BasicModal({...props}) {
             sx={{
               position: "relative",
               top: -16,
-              left: 132,
+              left: 140,
               cursor: "pointer",
               border: 2,
               borderRadius: 2,

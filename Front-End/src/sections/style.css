@@ -1,8 +1,9 @@
 .bg-section-header {
   height: 100vh;
   background: #fefefe00;
-  /* background-image: linear-gradient(to bottom, #fefefe00, 80%, #ffffff),
-    url("/img/cabecera/header-landing.webp"); */
+  background-image: linear-gradient(to bottom, #fefefe00, 80%, #ffffff),
+    url("/img/cabecera/header-landing.webp");
+  background-repeat: no-repeat;
 }
 
 .link-redes-sociales{

@@ -4,7 +4,6 @@ import {infoCards} from "../constants/infoCards";
 import {Box, Grid, Typography} from "@mui/material";
 import BasicModal from "../components/Modal/BasicModal";
 import Ubi from "../components/Ubi/Ubi";
-import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
 
 export default function Servicios() {
   return (

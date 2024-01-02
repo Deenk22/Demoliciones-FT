@@ -1,5 +1,5 @@
 export const navbar = [
-  {label: "Header", id: "header"},
+  {label: "Nosotros", id: "header"},
   {label: "Servicios", id: "servicios"},
-  {label: "Footer", id: "footer"},
+  {label: "Encuéntranos", id: "footer"},
 ];

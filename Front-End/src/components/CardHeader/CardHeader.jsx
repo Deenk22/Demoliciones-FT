@@ -33,7 +33,7 @@ export default function CardHeader({...props}) {
           backgroundPosition: "center",
         }}
       >
-        <Typography variant="h6" color={"white.main"} mt={0.5}>
+        <Typography variant="h6" component={"h1"} color={"white.main"} mt={0.5}>
           {titulo}
         </Typography>
       </Box>

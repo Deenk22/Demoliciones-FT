@@ -52,11 +52,16 @@ export default function Ubi() {
         width={{xs: "100%", sm: "88%", md: "72%", lg: "22%", xl: "24%"}}
       >
         <PersonPinIcon sx={{fontSize: 64}} color="white" />
-        <Typography variant="h6" color={"white.main"}>
+        <Typography variant="body1" color={"white.main"}>
           Ubicación
         </Typography>
-        <Typography variant="body2" color={"white.main"} mt={-1}>
-          Calle Montserrat, 40 2ºA / Málaga
+        <Typography
+          variant="body2"
+          color={"white.main"}
+          mt={-1}
+          textAlign={"center"}
+        >
+          Camino MedioAmbiental, Nº 23 / Málaga / CP: 29010.
         </Typography>
       </Box>
       <Box
@@ -70,7 +75,7 @@ export default function Ubi() {
         width={{xs: "100%", sm: "88%", md: "72%", lg: "22%", xl: "24%"}}
       >
         <PhoneForwardedIcon sx={{fontSize: 64}} color="white" />
-        <Typography variant="h6" color={"white.main"}>
+        <Typography variant="body1" color={"white.main"}>
           Llámanos al
         </Typography>
         <Typography
@@ -94,7 +99,7 @@ export default function Ubi() {
         width={{xs: "100%", sm: "88%", md: "72%", lg: "22%", xl: "24%"}}
       >
         <ForwardToInboxIcon sx={{fontSize: 64}} color="white" />
-        <Typography variant="h6" color={"white.main"}>
+        <Typography variant="body1" color={"white.main"}>
           Escríbenos a
         </Typography>
         <Typography

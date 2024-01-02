@@ -38,7 +38,7 @@ export default function Servicios() {
         <Typography
           variant="body1"
           color={"paragraph"}
-          width={{xs: "100%", sm: "32%"}}
+          width={{xs: "88%", sm: "32%"}}
           textAlign={{xs: "center", sm: "left"}}
         >
           Para satisfacer las necesidades cambiantes del mercado contamos con un
@@ -194,7 +194,7 @@ export default function Servicios() {
         <Typography
           variant="body1"
           color={"paragraph"}
-          width={{xs: "100%", sm: "32%"}}
+          width={{xs: "88%", sm: "32%"}}
           textAlign={{xs: "center", sm: "left"}}
           sx={{textWrap: "balance"}}
         >

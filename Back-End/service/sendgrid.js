@@ -1,3 +1,4 @@
+// const sgMail = require("@sendgrid/mail");
 const sgMail = require("@sendgrid/mail");
 const config = require("../config");
 

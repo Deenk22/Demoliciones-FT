@@ -3,7 +3,8 @@ const sgMail = require("../service/sendgrid");
 const router = express.Router();
 
 router.post("/api/send", async (req, res) => {
-  const { titulo, nombre, phone, email, mensaje } = req.body;
+  const {titulo, nombre, phone, email, mensaje} = req.body;
+  console.log(req.body);
 
   if (!nombre || !titulo || !phone || !email || !mensaje) {
     return res.status(400).send("Faltan datos obligatorios en la solicitud");
@@ -18,23 +19,32 @@ router.post("/api/send", async (req, res) => {
     Mensaje: <strong>${mensaje}</strong>.
     <br/>
     <br/>
-     Contacto;<br/>
-     Email: <strong>${email}</strong><br/>
-     Teléfono: <strong>${phone}</strong></p>`,
+    Contacto;<br/>
+    Email: <strong>${email}</strong><br/>
+    Teléfono: <strong>${phone}</strong></p>`,
   };
 
   try {
+    console.log(msg);
     await sgMail.send(msg);
-    console.log("Datos enviados a SendGrid:", msg);
+    // console.log("Datos enviados a SendGrid:", msg);
+    res
+      .status(201)
+      .json({success: true, message: "Email enviado correctamente."});
   } catch (err) {
-    if (err.response && err.response.body && err.response.body.errors) {
-      console.log("Errores de SendGrid:", err.response.body.errors);
-    }
+    console.log(err);
+    // Esto sirve para manejar los errores y acatarlos más rapidamente.
 
-    return res.status(500).send("Error al enviar el correo electrónico");
+    // if (err.response && err.response.body && err.response.body.errors) {
+    //   console.log("Errores de SendGrid:", err.response.body.errors);
+    // }
+
+    return res.status(500).json({
+      success: false,
+      message: "Error al enviar el correo electrónico.",
+    });
   }
-  console.log("Solicitud manejada correctamente");
-  res.status(201).send({ success: true });
+  // console.log("Solicitud manejada correctamente");
 });
 
 module.exports = router;
